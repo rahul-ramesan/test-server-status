@@ -20,7 +20,7 @@ export default function StatusPage() {
 
 	return (
 		<div style={{ fontFamily: 'Arial, sans-serif', maxWidth: 600, margin: '60px auto', padding: '0 20px' }}>
-			<h1>Site Status</h1>
+			<h1>Test Server Status</h1>
 			<p>Status: {status}</p>
 			<p>Last checked: {checkedAt}</p>
 		</div>
