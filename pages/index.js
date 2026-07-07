@@ -5,11 +5,16 @@ export default function StatusPage() {
 	const [checkedAt, setCheckedAt] = useState('');
 
 	useEffect(() => {
-		fetch('/api/check')
-			.then((res) => res.json())
-			.then((data) => {
-				setStatus(data.status);
-				setCheckedAt(data.checkedAt);
+		const target = 'https://test-server-status.xhost.live';
+
+		fetch(target, { mode: 'no-cors' })
+			.then(() => {
+				setStatus('UP');
+				setCheckedAt(new Date().toLocaleString());
+			})
+			.catch(() => {
+				setStatus('DOWN');
+				setCheckedAt(new Date().toLocaleString());
 			});
 	}, []);
 
